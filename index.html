@@ -1,188 +1,33 @@
-<html>
- <head>
+	<html>
+	<head>
 
-    <title>SCIENTIFIC CALCULATOR</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-    <meta http-equiv="Author" content="Alexander Bell" />
-    <meta http-equiv="Copyright" content="2010 Alexander Bell" />
-    <meta http-equiv="Expires" content="0" />
-    <meta name="Robots" content="all" />
+		<title>SCIENTIFIC CALCULATOR</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 
-    <meta name="Distribution" content="global" />
-    <meta name="Keywords" content="SCIENTIFIC CALCULATOR, HTML 5, CSS 3, jQuery, Online Calculator, Free Calculator, Math Calculator, School Math" />
-    <meta name="Description" content ="Free online SCIENTIFIC CALCULATOR with virtual memory: HTML 5, CSS 3, jQuery" />
+		<link href="Calculator.css" rel="stylesheet" type="text/css" />   
 
-    <!--CSS-->
-    <link href="Calculator.css" rel="stylesheet" type="text/css" />   
-     
-     <!--LINK TO jQUERY LIB-->
-    <script type="text/javascript" 
-        src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js">
-    </script>
+		<!--CALCULATOR SCRIPT-->
+		<script src="Calculator.js" type="text/javascript"></script>
 
-    <script type="text/javascript">
-        var refPage = "http://www.webinfocentral.com";
-        var delOpen = 5000;
-    </script>
+	</head>
 
-     <!--CALCULATOR SCRIPT-->
-    <script src="Calculator.js" type="text/javascript"></script>
+	<body>
+		<form name="myform" class="elegant-aero">
+			<h1>Auto Concatenator<span>Automatic string concatenation utility</span></h1>
+			<label><span>First String:</span>
+				<input type=text id='first-letter'></input>
+			</label>
+			<label><span>Second String:</span>
+				<input type=text id='second-letter'></input>
+			</label>
+			
+			<label>
+				<input type="button" class="button" onClick="concatenateNow()" value="Concatenate"/>
+			</label>
 
- </head>
-
- <body>
-   
-   <!--ADDED FOR OLDER IE PARTIAL COMPATIBILITY-->
-    <!--[if !IE]><!--><div class="centerColumn"><!--<![endif]-->
-   <!--[if IE 9]><div class="centerColumn"><![endif]-->
-   <!--[if IE 8]><div id="ie" class="centerColumn"><![endif]-->
-   <!--[if IE 7]><div id="ie" class="centerColumn"><![endif]-->
-   <!--[if lte IE 6]><div id="ie" class="centerColumn"><![endif]-->
-   	
-	    <nav>
-     	    <a href="http://www.webinfocentral.com"><button id ="home">HOME</button></a>
-     	    <a href="http://www.examiner.com/online-learning-in-new-york/html-5-css-3-and-inflation-calculator" 
-               target="_blank"><button id ="read">READ ARTICLE</button></a>
-   	    </nav>
-   	    <div class="clear"></div>
-
-   	    <div class = "main">
-    	    <div class="inf">i</div>
-    	    <header>
-      		    <h1>MATH CALCULATOR</h1>
-    	    </header>
-     	    <div class="clear"></div>
-     	
-	        <div id="keyPad">
-		
-		        <!--USER INPUT-->
-		        <div class="keys_ToRight">
-			        <button id="keyPad_btnToMem">&#8681</button>
-		        </div>
-        	        <input type="text" id="keyPad_UserInput" readonly /></input>
-		        <div class="clear"></div>
-		
-		        <!--MEM-->
-		        <div class="keys_ToRight">
-			        <button id="keyPad_btnFromMem">&#8679</button>
-		        </div>
- 		        <input type="text" id="keyPad_Mem" readonly /></input> 
-      		        <div class="clear"></div>
-
-		        <!--1st ROW-->
-		        <div class="keys_ToRight">
-			        <button id="keyPad_btnPlus" class="keyPad_btnNormal">+</button>
-			        <button id="keyPad_btnMinus" class="keyPad_btnNormal">-</button>
-			        <button id="keyPad_btnMult" class="keyPad_btnNormal">*</button>
-			        <button id="keyPad_btnDiv" class="keyPad_btnNormal">/</button>	
-		        </div>
-
-		        <button id="keyPad_btn1" class="keyPad_btnNormal">1</button>
-        	        <button id="keyPad_btn2" class="keyPad_btnNormal">2</button>
-        	        <button id="keyPad_btn3" class="keyPad_btnNormal">3</button>
-		        <div class="clear"></div>
-		
-		        <!--2nd ROW-->	
-		        <div class="keys_ToRight">
-			        <button id="keyPad_btnInverseSign" class="keyPad_btnCommand">+/-</button>
-			        <button id="keyPad_btnInverse" class="keyPad_btnCommand">1/x</button>
-			        <button id="keyPad_btnSquare" class="keyPad_btnCommand">x<sup>2</sup></button>
-			        <button id="keyPad_btnSquareRoot" class="keyPad_btnCommand">&#8730</button>
-		        </div>
-        	        <button id="keyPad_btn4" class="keyPad_btnNormal">4</button>
-        	        <button id="keyPad_btn5" class="keyPad_btnNormal">5</button>
-        	        <button id="keyPad_btn6" class="keyPad_btnNormal">6</button>
-		        <div class="clear"></div>
- 
-		        <!--3rd ROW-->	  
-		        <div class="keys_ToRight">
-			        <button id="keyPad_btnCube" class="keyPad_btnCommand">x<sup>3</sup></button>
-			        <button id="keyPad_btnCubeRoot" class="keyPad_btnCommand">&#8731</button>
-			        <button id="keyPad_btnLog" class="keyPad_btnCommand">Log</button>
-			        <button id="keyPad_btnExp" class="keyPad_btnCommand">e<sup>x</sup></button>
-		        </div>     
-		        <button id="keyPad_btn7" class="keyPad_btnNormal">7</button>
-        	        <button id="keyPad_btn8" class="keyPad_btnNormal">8</button>
-        	        <button id="keyPad_btn9" class="keyPad_btnNormal">9</button>
-		        <div class="clear"></div>
-
-		        <!--4th ROW-->
-		        <div class="keys_ToRight">
-			        <button id="keyPad_btnSin" class="keyPad_btnCommand">sin</button>
-			        <button id="keyPad_btnCosin" class="keyPad_btnCommand">cos</button>
-			        <button id="keyPad_btnTg" class="keyPad_btnCommand">tan</button>
-			        <button id="keyPad_btnCtg" class="keyPad_btnCommand">ctg</button>
-		        </div> 
-		        <button id="keyPad_btnDot" class="keyPad_btnNormal">.</button>
-        	        <button id="keyPad_btn0" class="keyPad_btnNormal">0</button>
-		        <button id="keyPad_btnSpace" class="keyPad_btnSpace">SPC</button>
-		        <div class="clear"></div>
-
-		        <!--5th ROW-->
-		        <div class="keys_ToRight">
-			        <button id="keyPad_btnEnter" class="keyPad_btnEnter">=</button>
-		        </div>  
-        	        <button id="keyPad_btnBack" class="keyPad_btnBack">&#8678</button>
-		        <button id="keyPad_btnClr" class="keyPad_btnClr">CLR</button>
-		        <div class="clear"></div>
-            </div>
-            <div class="clear"></div>
-
-            <article>
-	        <div class = "panel">
-	 	        <p>
-	    		    <strong>Example</strong>: calculate the expression: 243.4+345*98.1
-		        </p>
-                <ol>
-          		    <li>
-				        Enter the number 345 using the online numeric key pad. 
-				        In case you made a mistake, use the backspace 
-				        button &#8678 or clear the entire input box using "CLR" button
-			        </li>       	
-			        <li>
-				        Click on "*" button, then enter the number 98.1 and 
-				        press the "=" button to get the intermediate result
-			        </li>
-
-                    <li>
-				        Click the "+" button, enter 243.4 and press "=" button 
-				        to get the final result shown in lower box
-			        </li>
-			        <li>
-				        Use the "&#8679" and "&#8681" keys to move 
-				        the numbers to/from the memory register (lower box)
-			        </li>
-       		    </ol>
-   		        <hr/>
-		        <p>
-       	   		    Additional reading on online calculators is available at:
-		        </p>
-       		    <ol>
-         		    <li>
-				        <a href="http://www.examiner.com/online-learning-in-new-york/html-5-css-3-and-inflation-calculator" 
-             			    target="_blank">Inflation Index Calculator, Examiner.com</a>
-          		    </li>
-         		    <li>
-				        <a href="http://www.examiner.com/online-learning-in-new-york/compound-interest-calculator-programming-skills-for-school-students" 
-             			    target="_blank">Compound Interest Calculator, Examiner.com</a>
-
-          		    </li>
-                </ol>
-     	      </div>
-    	     </article>
-    	    <div class="clear"></div>
-
-     	    <p class="disclaimer">
-	  	        <strong>Disclaimer</strong>. The content on this page 
-	  	        is provided on ‘AS IS’ basis for demonstration purpose 
-	  	        only without warranty of any kind. Any commerical use 
-	  	        of this calculator is strictly prohibited.
-     	    </p>
-         </div>
-
-  	    <footer>
-    		    <h2>Copyright © 2010 Alexander Bell. All rights reserved.</h2>
-  	    </footer>
-   </div>
- </body>
-</html>
+			<label><span>Result:</span>
+				<input type=text id='result' disabled></input>
+			</label>
+		</form>
+	</body>
+	</html>
